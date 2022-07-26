@@ -11,8 +11,9 @@ const Projects = ({ user }) => {
         <ul>
           {user.projects.map((project, i) => (
             <ProjectItem key={i}>
-              <ProjectTitle>{project.name}</ProjectTitle>
+              <ProjectTitle>{project.displayName}</ProjectTitle>
               <p>{project.summary}</p>
+              <a href={`${project.website}`} target="_blank" >GitHub<i class='fa fa-github'></i></a>
               <SkillContainer>
                 {[...project.languages, ...project.libraries].map((item, j) => (
                   <Pill key={j}>{item}</Pill>
